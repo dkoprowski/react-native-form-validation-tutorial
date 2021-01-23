@@ -10,7 +10,7 @@ const Wrapper = styled.View`
 
 const StyledInput = styled.TextInput`
   border-color: ${(props) => (props.isError ? COLORS.red : COLORS.gray)};
-  border-width: 1;
+  border-width: 1px;
 `
 
 const Label = styled.Text`
