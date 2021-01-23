@@ -8,9 +8,10 @@ export const FormInput = (props) => {
   const { name, rules, defaultValue = '', ...inputProps } = props
 
   const formContext = useFormContext()
+  const { control, errors } = formContext
+  
   const { field } = useController({ name, control, rules, defaultValue })
 
-  const { control, errors } = formContext
 
   return (
     <Input
