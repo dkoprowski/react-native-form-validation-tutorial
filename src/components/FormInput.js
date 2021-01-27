@@ -4,7 +4,7 @@ import { useController, useFormContext } from 'react-hook-form'
 
 import { Input } from './Input'
 
-const ControlledInput = (props) => {
+const ControlledInput = React.forwardRef((props, forwardedRef) => {
   const { name, rules, defaultValue = '', ...inputProps } = props
 
   const formContext = useFormContext()
@@ -19,11 +19,12 @@ const ControlledInput = (props) => {
       onChangeText={field.onChange}
       onBlur={field.onBlur}
       value={field.value}
+      ref={forwardedRef}
     />
   )
-}
+})
 
-export const FormInput = (props) => {
+export const FormInput = React.forwardRef((props, forwardedRef) => {
   const { name, ...inputProps } = props
   const formContext = useFormContext()
 
@@ -34,8 +35,11 @@ export const FormInput = (props) => {
     return <Input {...inputProps} error={errorMessage} editable={false} />
   }
 
-  return <ControlledInput {...props} />
-}
+  return <ControlledInput {...props} ref={forwardedRef} />
+})
+
+FormInput.displayName = 'FormInput'
+ControlledInput.displayName = 'ControlledInput'
 
 FormInput.propTypes = {
   name: PropTypes.string.isRequired,

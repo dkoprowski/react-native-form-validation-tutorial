@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useRef } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Button } from 'react-native'
 import styled from 'styled-components/native'
@@ -16,6 +16,7 @@ const LOGIN_FIELDS = {
 
 const Login = () => {
   const formMethods = useForm()
+  const passwordRef = useRef()
 
   const onSubmit = (form) => {
     console.log(form)
@@ -25,6 +26,10 @@ const Login = () => {
     console.warn(errors)
   }
 
+  const focusPassword = useCallback(() => passwordRef?.current?.focus(), [
+    passwordRef,
+  ])
+
   return (
     <Wrapper>
       <FormProvider {...formMethods}>
@@ -32,6 +37,8 @@ const Login = () => {
           name={LOGIN_FIELDS.username}
           label='Username'
           rules={{ required: 'Username is required!' }}
+          onSubmitEditing={focusPassword}
+          returnKeyType='next'
         />
         <FormInput
           name={LOGIN_FIELDS.password}
@@ -43,6 +50,7 @@ const Login = () => {
               value: 10,
             },
           }}
+          ref={passwordRef}
         />
       </FormProvider>
       <Button

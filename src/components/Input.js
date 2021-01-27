@@ -23,18 +23,20 @@ const Error = styled.Text`
   color: ${COLORS.red};
 `
 
-export const Input = ({ label, error, ...textInputProps }) => {
+export const Input = React.forwardRef((props, forwardedRef) => {
+  const { label, error, ...textInputProps } = props
   const isError = Boolean(error)
 
   return (
     <Wrapper>
       {Boolean(label) && <Label>{label}</Label>}
-      <StyledInput isError={isError} {...textInputProps} />
+      <StyledInput isError={isError} {...textInputProps} ref={forwardedRef} />
       {isError && <Error>{error}</Error>}
     </Wrapper>
   )
-}
+})
 
+Input.displayName = 'Input'
 Input.propTypes = {
   label: PropTypes.string,
   error: PropTypes.string,
