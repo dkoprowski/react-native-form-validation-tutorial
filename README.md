@@ -4,7 +4,7 @@ This is a companion repository for [Handy form validation in React Native with r
 
 ---
 
-Each branch represents a signle step described in [the article](https://koprowski.it/react-native-form-validation-with-react-hook-form-useController).
+Each branch represents a single step described in [the article](https://koprowski.it/react-native-form-validation-with-react-hook-form-useController).
 
 - [01-create-basic-ui](https://github.com/dkoprowski/react-native-form-validation-tutorial/tree/01-create-basic-ui)
 - [02-create-form](https://github.com/dkoprowski/react-native-form-validation-tutorial/tree/02-create-form)
