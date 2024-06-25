@@ -1,10 +1,10 @@
 # Form validation in React Native with react-hook-form useController repo
 
-This is a companion repository for [Handy form validation in React Native with react-hook-form useController](https://koprowski.it/react-native-form-validation-with-react-hook-form-useController) article.
+This is a companion repository for [Handy form validation in React Native with react-hook-form useController](https://www.koprowski.it/blog/react-native-form-validation-with-react-hook-form-usecontroller/) article.
 
 ---
 
-Each branch represents a single step described in [the article](https://koprowski.it/react-native-form-validation-with-react-hook-form-useController).
+Each branch represents a single step described in [the article](https://www.koprowski.it/blog/react-native-form-validation-with-react-hook-form-usecontroller/).
 
 - [01-create-basic-ui](https://github.com/dkoprowski/react-native-form-validation-tutorial/tree/01-create-basic-ui)
 - [02-create-form](https://github.com/dkoprowski/react-native-form-validation-tutorial/tree/02-create-form)
