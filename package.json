@@ -13,6 +13,7 @@
     "expo": "~57.0.20",
     "expo-status-bar": "~57.0.1",
     "react": "19.2.3",
+    "react-hook-form": "7.87.0",
     "react-native": "0.86.3",
     "styled-components": "^6.1.19"
   }

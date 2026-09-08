@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import { Button } from 'react-native'
 import styled from 'styled-components/native'
 
@@ -9,6 +10,8 @@ const Wrapper = styled.View`
 `
 
 const Login = () => {
+  const formMethods = useForm()
+
   return (
     <Wrapper>
       <Input label='Username' />
