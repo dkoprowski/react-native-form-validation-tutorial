@@ -3,7 +3,7 @@ import { useController, useFormContext } from 'react-hook-form'
 
 import { Input } from './Input'
 
-export const FormInput = (props) => {
+const ControlledInput = (props) => {
   const { name, rules, defaultValue = '', ...inputProps } = props
 
   const formContext = useFormContext()
@@ -25,4 +25,18 @@ export const FormInput = (props) => {
       value={field.value}
     />
   )
+}
+
+export const FormInput = (props) => {
+  const { name, ...inputProps } = props
+  const formContext = useFormContext()
+
+  if (!formContext || !name) {
+    const errorMessage = !name
+      ? 'Form field must have a "name" prop!'
+      : 'Form field must be a descendant of `FormProvider` as it uses `useFormContext`!'
+    return <Input {...inputProps} error={errorMessage} editable={false} />
+  }
+
+  return <ControlledInput {...props} />
 }
