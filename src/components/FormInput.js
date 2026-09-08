@@ -4,7 +4,7 @@ import { useController, useFormContext } from 'react-hook-form'
 import { Input } from './Input'
 
 const ControlledInput = (props) => {
-  const { name, rules, defaultValue = '', ...inputProps } = props
+  const { name, rules, defaultValue = '', ref, ...inputProps } = props
 
   const formContext = useFormContext()
   const { control } = formContext
@@ -23,6 +23,7 @@ const ControlledInput = (props) => {
       onChangeText={field.onChange}
       onBlur={field.onBlur}
       value={field.value}
+      ref={ref}
     />
   )
 }

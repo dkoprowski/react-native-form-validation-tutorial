@@ -22,13 +22,13 @@ const Error = styled.Text`
   color: ${COLORS.red};
 `
 
-export const Input = ({ label, error, ...textInputProps }) => {
+export const Input = ({ label, error, ref, ...textInputProps }) => {
   const isError = Boolean(error)
 
   return (
     <Wrapper>
       {Boolean(label) && <Label>{label}</Label>}
-      <StyledInput isError={isError} {...textInputProps} />
+      <StyledInput isError={isError} {...textInputProps} ref={ref} />
       {isError && <Error>{error}</Error>}
     </Wrapper>
   )
