@@ -3,11 +3,16 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { Button } from 'react-native'
 import styled from 'styled-components/native'
 
-import { Input } from './Input'
+import { FormInput } from './FormInput'
 
 const Wrapper = styled.View`
   padding: 5px;
 `
+
+const LOGIN_FIELDS = {
+  username: 'username',
+  password: 'password',
+}
 
 const Login = () => {
   const formMethods = useForm()
@@ -15,8 +20,8 @@ const Login = () => {
   return (
     <Wrapper>
       <FormProvider {...formMethods}>
-        <Input label='Username' />
-        <Input label='Password' error="Password can't be blank" />
+        <FormInput name={LOGIN_FIELDS.username} label='Username' />
+        <FormInput name={LOGIN_FIELDS.password} label='Password' />
       </FormProvider>
       <Button title='Login' />
     </Wrapper>
