@@ -20,3 +20,11 @@ Each branch is a single step from [the article](https://www.koprowski.it/blog/re
 - [05-submit-form](https://github.com/dkoprowski/react-native-form-validation-tutorial/tree/05-submit-form)
 - [06-error-proof-fields](https://github.com/dkoprowski/react-native-form-validation-tutorial/tree/06-error-proof-fields)
 - [07-forward-ref](https://github.com/dkoprowski/react-native-form-validation-tutorial/tree/07-forward-ref)
+
+## Tests
+
+`main` adds a small test suite over the finished form:
+
+```bash
+npm test
+```
