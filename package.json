@@ -26,5 +26,13 @@
   },
   "jest": {
     "preset": "jest-expo"
+  },
+  "overrides": {
+    "@expo/cli": {
+      "zod": "^4.6.7"
+    },
+    "xcode": {
+      "uuid": "^11.1.1"
+    }
   }
 }
